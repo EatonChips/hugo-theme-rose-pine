@@ -20,4 +20,105 @@
         {{ partial "footer.html" . }}
     </div>
 </body>
+
+{{ if .Store.Get "hasMermaid" }}
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ 
+        startOnLoad: true,
+        theme: 'base',
+        themeVariables: {
+        /* General Theme */
+        'background': '#191724',                /* base */
+        'primaryColor': '#1f1d2e',              /* surface */
+        'secondaryColor': '#26233a',            /* overlay */
+        'tertiaryColor': '#eb6f92',             /* love */
+        'primaryBorderColor': '#e0def4',        /* text */
+        'secondaryBorderColor': '#6e6a86',      /* muted */
+        'tertiaryBorderColor': '#c4a7e7',       /* iris */
+        'primaryTextColor': '#e0def4',          /* text */
+        'secondaryTextColor': '#9ccfd8',        /* foam */
+        'tertiaryTextColor': '#ebbcba',         /* rose */
+        'lineColor': '#f6c177',                 /* gold */
+        'textColor': '#e0def4',                 /* text */
+
+        /* Backgrounds */
+        'mainBkg': '#1f1d2e',                   /* surface */
+        'secondBkg': '#26233a',                 /* overlay */
+        'labelBackground': '#1f1d2e',           /* surface */
+        'nodeBkg': '#26233a',                   /* overlay */
+        'clusterBkg': '#191724',                /* base */
+
+        /* Borders */
+        'nodeBorder': '#6e6a86',                /* muted */
+        'clusterBorder': '#c4a7e7',             /* iris */
+        'border1': '#6e6a86',                   /* muted */
+        'border2': '#9ccfd8',                   /* foam */
+
+        /* Text Colors */
+        'darkTextColor': '#6e6a86',             /* muted */
+        'titleColor': '#e0def4',                /* text */
+        'edgeLabelBackground': '#1f1d2e',       /* surface */
+
+        /* Sequence Diagram */
+        'actorBorder': '#31748f',               /* pine */
+        'actorBkg': '#1f1d2e',                  /* surface */
+        'actorTextColor': '#e0def4',            /* text */
+        'actorLineColor': '#6e6a86',            /* muted */
+        'signalColor': '#f6c177',               /* gold */
+        'signalTextColor': '#e0def4',           /* text */
+        'labelBoxBkgColor': '#26233a',          /* overlay */
+        'labelBoxBorderColor': '#c4a7e7',       /* iris */
+        'labelTextColor': '#e0def4',            /* text */
+        'loopTextColor': '#9ccfd8',             /* foam */
+        'noteBorderColor': '#31748f',           /* pine */
+        'noteBkgColor': '#ebbcba',              /* rose */
+        'noteTextColor': '#26233a',             /* surface */
+        'activationBorderColor': '#6e6a86',     /* muted */
+        'activationBkgColor': '#26233a',        /* overlay */
+        'sequenceNumberColor': '#f6c177',       /* gold */
+
+        /* Gantt Chart */
+        'sectionBkgColor': '#1f1d2e',           /* surface */
+        'altSectionBkgColor': '#26233a',        /* overlay */
+        'sectionBkgColor2': '#26233a',          /* overlay */
+        'excludeBkgColor': '#403d52',           /* highlightMed */
+        'taskBorderColor': '#6e6a86',           /* muted */
+        'taskBkgColor': '#1f1d2e',              /* surface */
+        'taskTextColor': '#e0def4',             /* text */
+        'taskTextLightColor': '#9ccfd8',        /* foam */
+        'taskTextOutsideColor': '#31748f',      /* pine */
+        'taskTextClickableColor': '#c4a7e7',    /* iris */
+        'activeTaskBorderColor': '#f6c177',     /* gold */
+        'activeTaskBkgColor': '#9ccfd8',        /* foam */
+        'gridColor': '#6e6a86',                 /* muted */
+        'doneTaskBkgColor': '#26233a',          /* overlay */
+        'doneTaskBorderColor': '#6e6a86',       /* muted */
+        'critBorderColor': '#eb6f92',           /* love */
+        'critBkgColor': '#eb6f92',              /* love */
+        'taskTextDarkColor': '#6e6a86',         /* muted */
+        'todayLineColor': '#eb6f92',            /* love */
+
+        /* C4 Context Diagram */
+        'personBorder': '#e0def4',              /* text */
+        'personBkg': '#1f1d2e',                 /* surface */
+
+        /* Architecture Diagram */
+        'archEdgeColor': '#f6c177',             /* gold */
+        'archEdgeArrowColor': '#9ccfd8',        /* foam */
+        'archEdgeWidth': '3',
+        'archGroupBorderColor': '#e0def4',      /* text */
+        'archGroupBorderWidth': '2px',
+
+        /* State Colors */
+        'labelColor': '#e0def4',                /* text */
+
+        /* Error Colors */
+        'errorBkgColor': '#a44141',             /* custom red (darkened love) */
+        'errorTextColor': '#e0def4'             /* text */
+        }
+     });
+  </script>
+{{ end }}
+
 </html>
